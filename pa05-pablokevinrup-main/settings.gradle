@@ -1,0 +1,3 @@
+rootProject.name = 'PA05-BulletJournal'
+include 'test'
+

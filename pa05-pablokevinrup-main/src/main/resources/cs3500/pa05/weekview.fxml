@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="700.0" prefWidth="1000.0">
+        <children>
+         <AnchorPane fx:id="weekview" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <VBox prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                     <MenuBar>
+                        <menus>
+                           <Menu fx:id="file" mnemonicParsing="false" text="File">
+                             <items>
+                               <MenuItem fx:id="save" mnemonicParsing="false" text="Save">
+                                    <accelerator>
+                                       <KeyCodeCombination alt="UP" code="S" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                 </MenuItem>
+                                 <MenuItem fx:id="open" mnemonicParsing="false" text="Open">
+                                    <accelerator>
+                                       <KeyCodeCombination alt="UP" code="O" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                 </MenuItem>
+                                 <MenuItem fx:id="newWeek" mnemonicParsing="false" text="New Week">
+                                    <accelerator>
+                                       <KeyCodeCombination alt="UP" code="N" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                 </MenuItem>
+                                 <MenuItem fx:id="setMax" mnemonicParsing="false" text="Set Max Entries" />
+                             </items>
+                           </Menu>
+                           <Menu fx:id="newEntry" mnemonicParsing="false" text="Add New Entry">
+                              <items>
+                                 <MenuItem fx:id="newTask" mnemonicParsing="false" text="Task">
+                                    <accelerator>
+                                       <KeyCodeCombination alt="UP" code="T" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                 </MenuItem>
+                                 <MenuItem fx:id="newEvent" mnemonicParsing="false" text="Event">
+                                    <accelerator>
+                                       <KeyCodeCombination alt="UP" code="E" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                 </MenuItem>
+                              </items>
+                           </Menu>
+                           <Menu fx:id="view" mnemonicParsing="false" text="View">
+                              <items>
+                                 <MenuItem fx:id="taskQueue" mnemonicParsing="false" text="Task Queue">
+                                    <accelerator>
+                                       <KeyCodeCombination alt="UP" code="V" control="UP" meta="DOWN" shift="DOWN" shortcut="UP" />
+                                    </accelerator>
+                                 </MenuItem>
+                                 <MenuItem fx:id="showStats" mnemonicParsing="false" text="Show Weekly Stats" />
+                                 <MenuItem fx:id="weekStart" mnemonicParsing="false" text="Week Start">
+                                    <accelerator>
+                                       <KeyCodeCombination alt="UP" code="W" control="UP" meta="DOWN" shift="DOWN" shortcut="UP" />
+                                    </accelerator>
+                                 </MenuItem>
+                              </items>
+                           </Menu>
+                        </menus>
+                     </MenuBar>
+                     <TextField fx:id="title" alignment="CENTER" prefHeight="68.5" promptText="Title">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </TextField>
+                     <TextArea fx:id="quote" minWidth="-Infinity" prefHeight="90.0" prefWidth="1000.0" text="QUOTES/NOTES" />
+                     <HBox fx:id="week" prefHeight="522.0" prefWidth="1000.0">
+                        <children>
+                           <TitledPane fx:id="sunday" animated="false" collapsible="false" prefHeight="522.0" prefWidth="142.0" text="Sunday">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="142.0">
+                                    <children>
+                                       <VBox prefHeight="495.0" prefWidth="144.0">
+                                          <children>
+                                             <TitledPane collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Tasks">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="142.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-1.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="sundayTasks" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox prefHeight="223.0" prefWidth="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                             <TitledPane animated="false" collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Events">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="200.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-2.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="sundayEvents" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox layoutY="1.0" prefHeight="223.0" prefWidth="146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </TitledPane>
+                           <TitledPane fx:id="monday" animated="false" collapsible="false" prefHeight="522.0" prefWidth="143.0" text="Monday">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="142.0">
+                                    <children>
+                                       <VBox prefHeight="495.0" prefWidth="144.0">
+                                          <children>
+                                             <TitledPane collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Tasks">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="142.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-1.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="mondayTasks" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox prefHeight="223.0" prefWidth="144.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                             <TitledPane animated="false" collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Events">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="200.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-2.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="mondayEvents" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox layoutY="1.0" prefHeight="223.0" prefWidth="146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </TitledPane>
+                           <TitledPane fx:id="tuesday" animated="false" collapsible="false" prefHeight="522.0" prefWidth="143.0" text="Tuesday">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="142.0">
+                                    <children>
+                                       <VBox prefHeight="495.0" prefWidth="144.0">
+                                          <children>
+                                             <TitledPane collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Tasks">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="142.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-1.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="tuesdayTasks" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox prefHeight="223.0" prefWidth="144.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                             <TitledPane animated="false" collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Events">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="200.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-2.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="tuesdayEvents" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox layoutY="1.0" prefHeight="223.0" prefWidth="146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </TitledPane>
+                           <TitledPane fx:id="wednesday" animated="false" collapsible="false" prefWidth="142.0" text="Wednesday">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="142.0">
+                                    <children>
+                                       <VBox prefHeight="495.0" prefWidth="144.0">
+                                          <children>
+                                             <TitledPane collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Tasks">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="142.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-1.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="wednesdayTasks" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox prefHeight="223.0" prefWidth="144.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                             <TitledPane animated="false" collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Events">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="200.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-2.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="wednesdayEvents" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox layoutY="1.0" prefHeight="223.0" prefWidth="146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </TitledPane>
+                           <TitledPane fx:id="thursday" animated="false" collapsible="false" prefHeight="522.0" prefWidth="143.0" text="Thursday">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="142.0">
+                                    <children>
+                                       <VBox prefHeight="495.0" prefWidth="144.0">
+                                          <children>
+                                             <TitledPane collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Tasks">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="142.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-1.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="thursdayTasks" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox prefHeight="223.0" prefWidth="144.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                             <TitledPane animated="false" collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Events">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="200.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-2.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="thursdayEvents" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox layoutY="1.0" prefHeight="223.0" prefWidth="146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </TitledPane>
+                           <TitledPane fx:id="friday" animated="false" collapsible="false" prefHeight="522.0" prefWidth="142.0" text="Friday">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="142.0">
+                                    <children>
+                                       <VBox prefHeight="495.0" prefWidth="144.0">
+                                          <children>
+                                             <TitledPane collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Tasks">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="142.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-1.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="fridayTasks" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox prefHeight="223.0" prefWidth="144.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                             <TitledPane animated="false" collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Events">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="200.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-2.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="fridayEvents" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox layoutY="1.0" prefHeight="223.0" prefWidth="146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </TitledPane>
+                           <TitledPane fx:id="saturday" animated="false" collapsible="false" prefHeight="522.0" prefWidth="144.0" text="Saturday">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="142.0">
+                                    <children>
+                                       <VBox prefHeight="495.0" prefWidth="144.0">
+                                          <children>
+                                             <TitledPane collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Tasks">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="142.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-1.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="saturdayTasks" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox prefHeight="223.0" prefWidth="144.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                             <TitledPane animated="false" collapsible="false" prefHeight="250.0" prefWidth="144.0" text="Events">
+                                                <content>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="200.0">
+                                                      <children>
+                                                         <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="-2.0" prefHeight="223.0" prefWidth="145.0">
+                                                            <content>
+                                                               <AnchorPane fx:id="saturdayEvents" minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="130.0">
+                                                                  <children>
+                                                                     <VBox layoutY="1.0" prefHeight="223.0" prefWidth="146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  </children>
+                                                               </AnchorPane>
+                                                            </content>
+                                                         </ScrollPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </TitledPane>
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="hiddenPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         <AnchorPane fx:id="sidebar" layoutY="27.0" prefHeight="567.0" prefWidth="286.0" style="-fx-background-color: LIGHTGRAY;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="27.5">
+            <children>
+               <VBox prefHeight="573.0" prefWidth="285.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                     <Label prefHeight="62.0" prefWidth="289.0" text=" Task Queue">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                        <padding>
+                           <Insets bottom="7.0" top="6.0" />
+                        </padding>
+                     </Label>
+                     <ScrollPane hbarPolicy="NEVER" prefHeight="613.0" prefWidth="288.0" vbarPolicy="ALWAYS">
+                       <content>
+                         <AnchorPane fx:id="taskPane" minHeight="0.0" minWidth="0.0" prefHeight="613.0" prefWidth="270.0">
+                              <children>
+                                 <VBox prefHeight="513.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              </children>
+                           </AnchorPane>
+                       </content>
+                     </ScrollPane>
+                  </children>
+               </VBox>
+            </children>
+         </AnchorPane>
+        </children>
+    </AnchorPane>
+</Scene>
